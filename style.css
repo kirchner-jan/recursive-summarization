@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+@import url('https://rcvd.github.io/roam-css-system/internal/colors-lesswrong.css');
+
+body {
+    padding-top: 50px;
+    padding-right: 200px;
+    padding-bottom: 50px;
+    padding-left: 200px;
+
+}
+ul.tree {
+  font-size:20px;
+}
+a {
+  line-height: 1.6;
+}
+
+ul {text-align: justify}
+ul::after {width: 100%; display: inline-block; content: "."; visibility: hidden}
+li {display: inline-block}
+
+li:before
+{
+    content: '';
+    position: absolute;
+    left: -30px;
+    top:0px;
+    width: 2px;
+    height: 80%;
+    background: black;
+    padding-top:30px;
+    opacity: 0.1;
+}
+li { font-size: 90%; }
+
+ul.tree li {
+    list-style-type: none;
+    position: relative;
+}
+
+ul.tree li ul {
+    display: none;
+}
+
+ul.tree li.open > ul {
+    display: block;
+}
+
+ul.tree li a {
+    color: black;
+    text-decoration: none;
+    hyphens: auto;
+    text-align: justify
+}
+
+ul.tree li a:before {
+    height: 1em;
+    padding:0 .1em;
+    font-size: .8em;
+    display: block;
+    position: absolute;
+    left: -1.3em;
+    top: .2em;
+}
+
+ul.tree li > a:not(:last-child):before {
+    content: '+';
+}
+
+ul.tree li.open > a:not(:last-child):before {
+    content: '-';
+}
